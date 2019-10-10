@@ -23,9 +23,8 @@ public class MainActivity extends AppCompatActivity {
         computerChoiceImage = findViewById(R.id.comp_choice_imageview);
         userChoiceImage = findViewById(R.id.user_choice_imageview);
 
-        rockButton = findViewById(R.id.rock_button);
-        paperButton = findViewById(R.id.paper_button);
-        scissorsButton = findViewById(R.id.scissors_button);
+        /*TODO
+        *  instantiate three buttons*/
 
         rockButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,55 +54,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void runGame() {
-        //0 = rock, 1 = paper, 2 = scissors
-        int indicator = (int)((Math.random()*3)+0);
+    /*TODO
+    *  create a function that'll change the imageView display according to the results of the game*/
 
-        //both have same choice
-        if(indicator == userChoiceInt) {
-           if(indicator == 0) {
-               userChoiceImage.setImageResource(R.drawable.rock);
-               computerChoiceImage.setImageResource(R.drawable.rock);
-           } else if(indicator == 1) {
-               userChoiceImage.setImageResource(R.drawable.paper);
-               computerChoiceImage.setImageResource(R.drawable.paper);
-           } else {
-               userChoiceImage.setImageResource(R.drawable.scissors);
-               computerChoiceImage.setImageResource(R.drawable.scissors);
-           }
-            Toast.makeText(MainActivity.this, "Draw", Toast.LENGTH_SHORT).show();
-        } else {        //different choices
-           if(indicator == 0) {         //computer choice == rock
-               computerChoiceImage.setImageResource(R.drawable.rock);
-               if(userChoiceInt == 1) {         //rock vs paper
-                   userChoiceImage.setImageResource(R.drawable.paper);
-                   Toast.makeText(MainActivity.this, "You won", Toast.LENGTH_SHORT).show();
-               } else if (userChoiceInt == 2){                         //rock vs scissors
-                   userChoiceImage.setImageResource(R.drawable.scissors);
-                   Toast.makeText(MainActivity.this, "You lost", Toast.LENGTH_SHORT).show();
-               }
-           }
-           else if(indicator == 1) {    //computer choice == paper
-               computerChoiceImage.setImageResource(R.drawable.paper);
-               if(userChoiceInt == 0) {         //paper vs rock
-                   userChoiceImage.setImageResource(R.drawable.rock);
-                   Toast.makeText(MainActivity.this, "You lost", Toast.LENGTH_SHORT).show();
-               } else if(userChoiceInt == 2){                         //paper vs scissors
-                   userChoiceImage.setImageResource(R.drawable.scissors);
-                   Toast.makeText(MainActivity.this, "You won", Toast.LENGTH_SHORT).show();
-               }
-           } else {                     //computer choice == scissors
-               computerChoiceImage.setImageResource(R.drawable.scissors);
-               if(userChoiceInt == 0) {         //scissors vs rock
-                   userChoiceImage.setImageResource(R.drawable.rock);
-                   Toast.makeText(MainActivity.this, "You won", Toast.LENGTH_SHORT).show();
-               } else if(userChoiceInt == 1) {                         //scissors vs paper
-                   userChoiceImage.setImageResource(R.drawable.paper);
-                   Toast.makeText(MainActivity.this, "You lost", Toast.LENGTH_SHORT).show();
-               }
-           }
-        }
-    }
 
 
 
